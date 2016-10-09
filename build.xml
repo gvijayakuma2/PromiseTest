@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<project name="Stats Poller" basedir=".">
+
+   <target name="deploy" description="Generate and deploy bundle">
+      <jar destfile="azureauth.jar">
+
+         <manifest>
+            <attribute name="Main-Class"
+            value="com.csc.sample.TestAuth"/>
+         </manifest>
+
+       	<fileset dir="bin">
+         	<include name="**/*.class"/>
+      	</fileset>
+
+        <zipfileset includes="**/*.class" src="lib/com.servicemesh.core-1.0.0.jar"/>
+        <zipfileset includes="**/*.class" src="lib/com.servicemesh.io-1.0.0.jar"/>
+        <zipfileset includes="**/*.class" src="lib/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/commons-lang-2.5.jar"/>
+        <zipfileset includes="**/*.class" src="lib/guava-16.0.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/httpasyncclient-4.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/httpclient-4.4.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/httpcore-4.4.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/httpcore-nio-4.4.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/log4j-1.2.17.jar"/>
+        <zipfileset includes="**/*.class" src="lib/slf4j-api-1.7.5.jar"/>
+
+      </jar>
+   </target>
+
+</project>
